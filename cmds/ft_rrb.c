@@ -1,0 +1,27 @@
+# include "../pushswap.h"
+
+/*
+Shift down all elements of stack b by 1.
+The last element becomes the first one.
+*/
+char	*ft_rrb(t_psvars *v, int debug)
+{
+	int	i;
+
+	i = v->sizeb - 1;
+	if (v->sizeb > 1)
+	{
+		while (i > 0)
+		{
+			v->i0 = v->b[i];
+			v->i1 = v->b[i - 1];
+			v->b[i] = v->i1;
+			v->b[i - 1] = v->i0;
+			i--;
+		}
+	}
+	v->cmd = "rrb\n";
+	if (debug)
+		ft_printst2(*v);
+	return (v->cmd);
+}
