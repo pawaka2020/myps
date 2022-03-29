@@ -30,8 +30,6 @@ int ft_valid(int c, char **v)
 	return (1);
 }
 
-
-
 int main(int argc, char **argv) 
 {
 	int	*rankarray;
@@ -39,7 +37,5 @@ int main(int argc, char **argv)
 	if (!ft_valid(argc, argv))
 		ft_perror("invalid parameter");
 	printf("fdf started\n");
-	// rankarray = ft_convert(argc, argv, 1);
-	// free(rankarray);
 	ft_startfdf(argc, argv);
 }

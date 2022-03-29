@@ -14,5 +14,5 @@ re: fclean all clean
 t: all
 	./$(NAME) 4 3 2 1 0
 t2: all
-	./$(NAME) 2 1 3 6 5 8
+	./$(NAME) 2 1 3 6 5 -8
 .PHONY: $(NAME) all clean fclean re t t2

@@ -9,6 +9,6 @@ char	*ft_rrr(t_psvars *v, int debug)
 	v->cmd = ft_rrb(v, 0);
 	v->cmd = "rrr\n";
 	if (debug)
-		ft_printst2(*v);
+		ft_presult(*v);
 	return (v->cmd);
 }

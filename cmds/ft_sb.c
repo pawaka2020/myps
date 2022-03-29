@@ -15,6 +15,6 @@ char	*ft_sb(t_psvars *v, int debug)
 	}
 	v->cmd = "sa\n";
 	if (debug)
-		ft_printst2(*v);
+		ft_presult(*v);
 	return (v->cmd);
 }

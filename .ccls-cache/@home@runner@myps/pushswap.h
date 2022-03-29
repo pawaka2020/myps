@@ -12,34 +12,41 @@ push_swap program
 */
 typedef struct s_psvars
 {
-	char	**stacka;
-	char	**stackb;
+	//char	**stacka;
+	//char	**stackb;
+	int	*a;
+	int	*b;
 	int	size;
 	int	sizea;
 	int	sizeb;
-	char	*s0;
-	char	*s1;
+	//char	*s0;
+	//char	*s1;
+	int	i0;
+	int	i1;
 	char	*cmd;
 }t_psvars;
 //core functions
 void	ft_startfdf(int argc, char **argv);
 void	ft_perror(char *str);
-void	ft_printst(t_psvars v);
+//void	ft_printst(t_psvars v);
+void	ft_printst2(t_psvars v);
+int	*ft_convert(int argc, char **argv, int	debug);
 //algos
 void	ft_test(t_psvars v);
 void	ft_pdf(t_psvars v);
 void	ft_insertion(t_psvars v);
+void	ft_binaryradix(t_psvars v);
 //commands
-char	*ft_sa(t_psvars *v, int test);
-char	*ft_sb(t_psvars *v, int test);
-char	*ft_ss(t_psvars *v, int test);
-char	*ft_pa(t_psvars *v, int test);
-char	*ft_pb(t_psvars *v, int test);
-char	*ft_ra(t_psvars *v, int test);
-char	*ft_rra(t_psvars *v, int test);
-char	*ft_rb(t_psvars *v, int test);
-char	*ft_rrb(t_psvars *v, int test);
-char	*ft_rr(t_psvars *v, int test);
-char	*ft_rrr(t_psvars *v, int test);
+char	*ft_sa(t_psvars *v, int debug);
+char	*ft_sb(t_psvars *v, int debug);
+char	*ft_ss(t_psvars *v, int debug);
+char	*ft_pa(t_psvars *v, int debug);
+char	*ft_pb(t_psvars *v, int debug);
+char	*ft_ra(t_psvars *v, int debug);
+char	*ft_rra(t_psvars *v, int debug);
+char	*ft_rb(t_psvars *v, int debug);
+char	*ft_rrb(t_psvars *v, int debug);
+char	*ft_rr(t_psvars *v, int debug);
+char	*ft_rrr(t_psvars *v, int debug);
 
 #endif

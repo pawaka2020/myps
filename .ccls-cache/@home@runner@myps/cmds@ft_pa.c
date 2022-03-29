@@ -18,6 +18,6 @@ char	*ft_pa(t_psvars *v, int debug)
 	v->sizeb = v->sizeb - 1;
 	v->cmd = "pa\n";
 	if (debug)
-		ft_presult(*v);
+		ft_printst2(*v);
 	return (v->cmd);
 }

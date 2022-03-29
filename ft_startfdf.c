@@ -10,14 +10,20 @@
 // 	printf("_ _\na b\n");
 // }
 
-void ft_printst2(t_psvars v)
+void ft_presult(t_psvars v)
 {
 	int	i;
 
 	i = -1;
 	while(i++, i < v.size)
-		printf("%d %d\n", v.a[i], v.b[i]);
-	printf("_ _\na b\n");
+	{
+		if (v.a[i] != -1)
+			printf("%d ", v.a[i]);
+		if (v.b[i] != -1)
+			printf("%d ", v.b[i]);
+		printf("\n");
+	}
+	printf("_ _\na b\n\n");
 }
 
 void ft_buildst(t_psvars *v, int argc, char **argv, int test)
@@ -33,7 +39,7 @@ void ft_buildst(t_psvars *v, int argc, char **argv, int test)
 	while (i++, i < v->size)
 		v->b[i] = -1;
 	if (test)
-		ft_printst2(*v);
+		ft_presult(*v);
 }
 
 void ft_sort(t_psvars v, char *algo)
@@ -42,6 +48,8 @@ void ft_sort(t_psvars v, char *algo)
 		ft_test(v);
 	else if (algo == "pdf")
 		ft_pdf(v);
+	else if (algo = "binaryradix")
+		ft_binaryradix(v);
 }
 
 void ft_startfdf(int argc, char **argv)
@@ -49,7 +57,7 @@ void ft_startfdf(int argc, char **argv)
 	t_psvars v;
 	
 	ft_buildst(&v, argc, argv, 1);
-	ft_sort(v, "test");
+	ft_sort(v, "binaryradix");
 	
 	// free(v.stacka);
 	// free(v.stackb);

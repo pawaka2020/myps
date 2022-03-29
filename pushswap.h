@@ -28,13 +28,13 @@ typedef struct s_psvars
 //core functions
 void	ft_startfdf(int argc, char **argv);
 void	ft_perror(char *str);
-//void	ft_printst(t_psvars v);
-void	ft_printst2(t_psvars v);
+void	ft_presult(t_psvars v);
 int	*ft_convert(int argc, char **argv, int	debug);
 //algos
 void	ft_test(t_psvars v);
 void	ft_pdf(t_psvars v);
 void	ft_insertion(t_psvars v);
+void	ft_binaryradix(t_psvars v, int showresult);
 //commands
 char	*ft_sa(t_psvars *v, int debug);
 char	*ft_sb(t_psvars *v, int debug);
