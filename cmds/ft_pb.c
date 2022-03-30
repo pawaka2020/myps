@@ -11,12 +11,13 @@ char	*ft_pb(t_psvars *v, int debug)
 	v->sizeb = v->sizeb + 1;
 	ft_rrb(v, 0);
 	v->i0 = v->a[0];
-	v->i1 = v->b[0];
-	v->a[0] = v->i1;
+	v->a[0] = -1;
 	v->b[0] = v->i0;
 	ft_ra(v, 0);
 	v->sizea = v->sizea - 1;
 	v->cmd = "pb\n";
+	v->count = v->count - 1;
+	//printf("count = %d\n", v->count);
 	if (debug)
 		ft_presult(*v);
 	return (v->cmd);

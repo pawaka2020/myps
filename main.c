@@ -30,12 +30,12 @@ int ft_valid(int c, char **v)
 	return (1);
 }
 
+//switch the 
 int main(int argc, char **argv) 
 {
 	int	*rankarray;
 	
 	if (!ft_valid(argc, argv))
 		ft_perror("invalid parameter");
-	printf("fdf started\n");
-	ft_startfdf(argc, argv);
+	ft_startfdf(argc, argv, 1);
 }

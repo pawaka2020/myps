@@ -15,15 +15,16 @@ void ft_presult(t_psvars v)
 	int	i;
 
 	i = -1;
+	printf("a: ");
 	while(i++, i < v.size)
-	{
 		if (v.a[i] != -1)
-			printf("%d ", v.a[i]);
+			printf("%d ", v.a[i]);		
+	printf("\nb: ");
+	i = -1;
+	while(i++, i < v.size)
 		if (v.b[i] != -1)
 			printf("%d ", v.b[i]);
-		printf("\n");
-	}
-	printf("_ _\na b\n\n");
+	printf("\n");
 }
 
 void ft_buildst(t_psvars *v, int argc, char **argv, int test)
@@ -38,30 +39,28 @@ void ft_buildst(t_psvars *v, int argc, char **argv, int test)
 	v->b = (int *)malloc((v->size) * sizeof(int));
 	while (i++, i < v->size)
 		v->b[i] = -1;
+	v->count = 0;
 	if (test)
 		ft_presult(*v);
 }
 
-void ft_sort(t_psvars v, char *algo)
+void ft_sort(t_psvars v, int showresult)
 {
-	if (algo == "test")
-		ft_test(v);
-	else if (algo == "pdf")
-		ft_pdf(v);
-	else if (algo = "binaryradix")
-		ft_binaryradix(v);
+	if (ft_alreadysorted(v) == 0)
+	{
+		if (v.size < 6)
+			ft_insertion(v, showresult);
+		else
+			ft_binaryradix(v, showresult);
+	}
 }
 
-void ft_startfdf(int argc, char **argv)
+void ft_startfdf(int argc, char **argv, int showresult)
 {
-	t_psvars v;
+	t_psvars	v;
 	
-	ft_buildst(&v, argc, argv, 1);
-	ft_sort(v, "binaryradix");
-	
-	// free(v.stacka);
-	// free(v.stackb);
+	ft_buildst(&v, argc, argv, 0);
+	ft_sort(v, showresult);
 	free(v.a);
 	free(v.b);
-	//exit(0);
 }

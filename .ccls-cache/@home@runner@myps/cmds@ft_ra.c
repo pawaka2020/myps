@@ -4,7 +4,7 @@
 Shift up all elements of stack a by 1.
 The first element becomes the last one.
 */
-char	*ft_ra(t_psvars *v, int test)
+char	*ft_ra(t_psvars *v, int debug)
 {
 	int	i;
 
@@ -13,15 +13,16 @@ char	*ft_ra(t_psvars *v, int test)
 	{
 		while (i < v->sizea - 1)
 		{
-			v->s0 = v->stacka[i];
-			v->s1 = v->stacka[i + 1];
-			v->stacka[i] = v->s1;
-			v->stacka[i + 1] = v->s0;
+			v->i0 = v->a[i];
+			v->i1 = v->a[i + 1];
+			v->a[i] = v->i1;
+			v->a[i + 1] = v->i0;
 			i++;
 		}
 	}
 	v->cmd = "ra\n";
-	if (test)
-		ft_printst(*v);
+	v->count = v->count + 1;
+	if (debug)
+		ft_presult(*v);
 	return (v->cmd);
 }

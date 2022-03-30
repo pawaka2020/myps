@@ -21,7 +21,8 @@ char	*ft_rra(t_psvars *v, int debug)
 		}
 	}
 	v->cmd = "rra\n";
+	v->count = v->count + 1;
 	if (debug)
-		ft_printst2(*v);
+		ft_presult(*v);
 	return (v->cmd);
 }

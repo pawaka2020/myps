@@ -21,6 +21,8 @@ char	*ft_ra(t_psvars *v, int debug)
 		}
 	}
 	v->cmd = "ra\n";
+	v->count = v->count + 1;
+	//printf("count = %d\n", v->count);
 	if (debug)
 		ft_presult(*v);
 	return (v->cmd);

@@ -14,6 +14,7 @@ char	*ft_sa(t_psvars *v, int debug)
 		v->a[1] = v->i0;
 	}
 	v->cmd = "sa\n";
+	v->count = v->count + 1;
 	if (debug)
 		ft_presult(*v);
 	return (v->cmd);

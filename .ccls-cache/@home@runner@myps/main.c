@@ -32,7 +32,9 @@ int ft_valid(int c, char **v)
 
 int main(int argc, char **argv) 
 {
+	int	*rankarray;
+	
 	if (!ft_valid(argc, argv))
 		ft_perror("invalid parameter");
-	ft_startfdf(argc, argv);
+	ft_startfdf(argc, argv, 1);
 }
